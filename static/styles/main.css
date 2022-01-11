@@ -212,7 +212,7 @@ header nav{
 }
 /* ----menu---- */
 .mobile-menu{
-    padding: 15px;
+    padding: 25px;
     top: 0;
     bottom: 0;
     right: 20%;
@@ -222,6 +222,7 @@ header nav{
     background: white;
     transition-duration: .3s;
     transition-timing-function: linear;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 0px, rgba(0, 0, 0, 0.5) 0px 12px 13px -3px, rgba(0, 0, 0, 0.4) 0px 0px 0px inset;
 }
 
 .mobile-menu.active{
@@ -237,12 +238,12 @@ header nav{
 
 .mobile-menu_link{
     color: var(--gold-color);  
-    font-size: 16px; 
+    font-size: 18px; 
     font-family: 'Roboto_medium';
     display: block;
     text-decoration: none;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 /* ----------------------------------------- media ---------------------------- */
 
@@ -294,31 +295,30 @@ header nav{
 @media (max-width: 575px){
     .header_content__title{
         text-align: center;
-        padding: 5px;
-        font-size: 20px;
+        padding: 8px 5px;
+        font-size: 22px;
         margin: 0 0 30px;
         border-width: 3px;
     }
 
     .header_buttons__gold{
-        font-size: 13px;
+        font-size: 14px;
         line-height: 32px;
         text-align: center;
         margin: 0 8px;
-        width: 150px;
+        margin-bottom: 20px;
     }
     
     .header_buttons__gold-reverse{
-        font-size: 13px;
+        font-size: 14px;
         line-height: 32px;
         text-align: center;
         margin: 0 8px;
-        width: 150px;
     }
     
     .header_content__text{
-        font-size: 13px;
-        margin-bottom: 30px;
+        font-size: 16px;
+        margin-bottom: 50px;
         max-width: 480px;
         text-align: center;
     }
@@ -326,12 +326,7 @@ header nav{
         width: 100px;
         height: 100px;
     }
-}
-@media (max-width: 340px){
     .header_buttons{
         flex-direction: column;
-    }
-    .header_buttons__gold{
-        margin-bottom: 10px;
     }
 }
