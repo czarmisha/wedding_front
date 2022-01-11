@@ -11,9 +11,31 @@
 <body>
     <header>
         <div class="header">
+            <div class="mobile-menu position-absolute d-flex flex-column align-items-center d-md-none">
+                <ul class="mobile-menu_list">
+                    <li class="">
+                        <div class="dropdown">
+                            <a class="mobile-menu_link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                              Каталог услуг
+                            </a>
+                          
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <li><a class="dropdown-item" href="#">Action</a></li>
+                              <li><a class="dropdown-item" href="#">Another action</a></li>
+                              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class=""><a href="" class="mobile-menu_link">Рейтинг</a></li>
+                    <li class=""><a href="" class="mobile-menu_link">Тендеры</a></li>
+                    <li class=""><a href="" class="mobile-menu_link">О нас</a></li>
+                    <li class=""><a href="" class="mobile-menu_link">Контакты</a></li>
+                    <li class=""><a href="" class="mobile-menu_link">Вход | Регистрация</a></li>
+                </ul>
+            </div>
             <div class="header_background"><div class="background_opacity"></div></div>
             <nav class="">
-                <ul class="header_navigation">
+                <ul class="header_navigation d-none d-md-flex">
                     <li class="">
                         <div class="dropdown">
                             <a class="nav_link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -31,11 +53,12 @@
                     <li class=""><a href="" class="nav_link">Тендеры</a></li>
                 </ul>
                 <a href="" class="logo"><img src="media/images/TOYPOY_logo_png.webp" alt=""></a>
-                <ul class="header_navigation">
+                <ul class="header_navigation d-none d-md-flex">
                     <li class=""><a href="" class="nav_link">О нас</a></li>
                     <li class=""><a href="" class="nav_link">Контакты</a></li>
                     <li class=""><a href="" class="nav_link">Вход | Регистрация</a></li>
                 </ul>
+                <a href="" class="burger_btn d-flex d-md-none"><span></span></a>
             </nav>
             <div class="header_content">
                 <h1 class="header_content__title">Организуйте свадьбу не выходя из дома</h1>
@@ -53,5 +76,15 @@
 
     <script src="static/bootstrap/js/popper.js"></script>
     <script src="static/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+        let burgerBtn = document.querySelector('.burger_btn');
+        let menu = document.querySelector('.mobile-menu');
+        burgerBtn.addEventListener('click', (e)=>{
+            e.preventDefault();
+            burgerBtn.classList.toggle('active');
+            menu.classList.toggle('active');
+        })
+    </script>
 </body>
 </html>
