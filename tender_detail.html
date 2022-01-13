@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/styles/main.css">
-    <title>Home page</title>
+    <link rel="stylesheet" href="static/styles/tender_detail.css">
+    <title>Document</title>
 </head>
 <body>
     <header>
@@ -52,9 +52,6 @@
                     <li><a href="" class="mobile-menu_sociallink">i</a></li>
                 </ul>
             </div>
-            <div class="header_background">
-                <!-- <div class="background_opacity"></div> -->
-            </div>
             <nav class="">
                 <ul class="header_navigation d-none d-md-flex">
                     <li class="">
@@ -81,105 +78,58 @@
                 </ul>
                 <a href="" class="burger_btn d-flex d-md-none"><span></span></a>
             </nav>
-            <div class="header_content">
-                <h1 class="header_content__title">Организуйте свадьбу не выходя из дома</h1>
-                <p class="header_content__text text-center">
-                    T<span>O</span>YP<span>O</span>Y.uz собрал каталог лучших специалистов Ташкента для организации вашей свадьбы мечты.
-                </p>
-                <div class="header_buttons">
-                    <a href="" class="header_buttons__gold">Начать подготовку</a>
-                    <a href="" class="header_buttons__gold-reverse">Искать специалистов</a>
-                </div>
-            </div>
         </div>
     </header>
     <main>
-        <section class="tender_section">
-            <div class="container">
-                <h2 class="text-center title">Здесь молодожены ищут специалистов. Создано <span>3886</span> тендеров</h2>
-                <ul class="d-flex text-center justify-content-center">
-                    <li><span>1.</span> Создавай объявления</li>
-                    <li><span>2.</span> Получай предложения от специалистов</li>
-                    <li><span>3.</span> Выбирай лучших</li>
-                </ul>
-                <p class="text">Тендеры помогают съкономить массу времени на поиски</p>
-                <div class="tender_list row align-items-center justify-content-center">
-                    <div class="col-12 col-md-6 col-lg-4">
-                       <a href="" class="tender_link">
-                        <div class="tender_box">
-                            <div class="tender_info d-flex align-items-center justify-content-evenly">
-                                <img src="media/images/header-background.jpg" alt="" class="">
-                                <p class="tender_info-text">
-                                    Нужен <br>
-                                    <span class="tender_specialist">Фотограф</span> <br>
-                                    на 22.01.2022 <br>
-                                    Бюджет: <span class="tender_budget">6000 сум</span>
-                                </p>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="tender_box">
+                        <div class="tender_header d-flex align-items-center justify-content-between">
+                            <h3 class="tender_need">Нужен: <span>Фотограф</span></h3>
+                            <div class="tender_info">
+                                <span class="tender_on_date">на 03.05.2022</span>
+                                <span class="tender_budget">Бюджет <span>5000 сум</span></span>
                             </div>
-                            <p class="tender_customer text-start">Павел</p>
-                            <p class="tender_description">Ищу фотографа на мероприятие - роспись в загсе, фото в студии и ресторане</p>
-                            <p class="tender_responses">6 предложений</p>
                         </div>
-                       </a>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                       <a href="" class="tender_link">
-                        <div class="tender_box">
-                            <div class="tender_info d-flex align-items-center justify-content-evenly">
-                                <img src="media/images/header-background.jpg" alt="" class="">
-                                <p class="tender_info-text">
-                                    Нужен <br>
-                                    <span class="tender_specialist">Фотограф</span> <br>
-                                    на 22.01.2022 <br>
-                                    Бюджет: <span class="tender_budget">6000 сум</span>
-                                </p>
+                        <div class="tender_body d-flex align-items-start">
+                            <div class="tender_img"><img src="media/images/s.jpg" alt=""></div>
+                            <div class="tender_preview">
+                                <p class="tender_author">Николаев Николай</p>
+                                <p class="tender_comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur expedita suscipit earum.</p>
                             </div>
-                            <p class="tender_customer text-start">Павел</p>
-                            <p class="tender_description">Ищу фотографа на мероприятие - роспись в загсе, фото в студии и ресторане</p>
-                            <p class="tender_responses">6 предложений</p>
                         </div>
-                       </a>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                       <a href="" class="tender_link">
-                        <div class="tender_box">
-                            <div class="tender_info d-flex align-items-center justify-content-evenly">
-                                <img src="media/images/header-background.jpg" alt="" class="">
-                                <p class="tender_info-text">
-                                    Нужен <br>
-                                    <span class="tender_specialist">Фотограф</span> <br>
-                                    на 22.01.2022 <br>
-                                    Бюджет: <span class="tender_budget">6000 сум</span>
-                                </p>
+                        <div class="tender_footer">
+                            <span class="tender_created">Тендер создан: 08.01.2021</span>
+                            <span class="tender_responses">0 предложений</span>
+                        </div>
+                        <div class="tender_specialists">
+                            <div class="wrapper">
+                                <h3 class="title">Специалисты, которые откликнулись на этот тендер</h3>
+                                <div class="row">
+                                    <div class="col-12 col-md-6 d-flex align-items-center mb-4">
+                                        <img src="media/images/s.jpg" alt="">
+                                        <p class="specialist">Ведущий <br> <a href="">Вера Тихая</a></p>
+                                    </div>
+                                    <div class="col-12 col-md-6 d-flex align-items-center mb-4">
+                                        <img src="media/images/s.jpg" alt="">
+                                        <p class="specialist">Ведущий <br> <a href="">Вера Тихая</a></p>
+                                    </div>
+                                    <div class="col-12 col-md-6 d-flex align-items-center mb-4">
+                                        <img src="media/images/s.jpg" alt="">
+                                        <p class="specialist">Ведущий <br> <a href="">Вера Тихая</a></p>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="tender_customer text-start">Павел</p>
-                            <p class="tender_description">Ищу фотографа на мероприятие - роспись в загсе, фото в студии и ресторане</p>
-                            <p class="tender_responses">6 предложений</p>
                         </div>
-                       </a>
                     </div>
-                    
-                </div>
-                <div class="tender_btns">
-                    <a href="" class="btn__white">Смотреть тендеры</a>
-                    <a href="" class="btn__gold">Создать тендер</a>
                 </div>
             </div>
-        </section>
-
-        <section class="welcome">
-            <div class="container text-center">
-                <h2 class="welcome_title title">Добро пожаловать в мир T<span>O</span>YP<span>O</span>Y!</h2>
-                <a href="" class="btn__gold welcome_client-register">Регистрация молодоженов</a>
-
-                <h2 class="welcome_subtitle">Вы свадебный профессионал или фирма?</h2>
-                <a href="" class="welcome_spec-register">Как вам зарегистрироваться?</a>
-            </div>
-        </section>
+        </div>
     </main>
-    <footer>
 
-    </footer>
+
+
 
 
     <script src="static/bootstrap/js/popper.js"></script>
@@ -202,6 +152,8 @@
             e.preventDefault();
             burgerBtn.classList.toggle('active');
             menu.classList.toggle('active');
+            if(menu.classList.contains('active'))document.body.style.overflow = 'hidden';
+            else document.body.style.overflow = 'auto';
         })
     </script>
 </body>
