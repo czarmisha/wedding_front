@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/styles/tender_detail.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="static/styles/spec_detail.css">
+    <title>detail for specialist</title>
 </head>
 <body>
     <header>
@@ -83,52 +83,75 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col">
-                    <div class="tender_box">
-                        <div class="tender_header d-flex align-items-center justify-content-between">
-                            <h3 class="tender_need">Нужен: <span>Фотограф</span></h3>
-                            <div class="tender_info">
-                                <span class="tender_on_date">на 03.05.2022</span>
-                                <span class="tender_budget">Бюджет <span>5000 сум</span></span>
-                            </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                    <div class="detail_left d-flex flex-column align-items-center align-items-md-start">
+                        <img class="specialist_avatar" src="media/images/s.jpg" alt="">
+                        <div class="info">
+                            <h3 class="subtitle">Информация</h3>
+                            <p class="specialist_fullname">Фарангиз Усманова</p>
+                            <p class="specialist_type">Фотограф</p>
+                            <p class="specialist_price">Цена: <span>1000000 сум</span></p>
+                            <p class="specialist_price">Цена в час: <span>22000 сум</span></p>
                         </div>
-                        <div class="tender_body d-flex align-items-start">
-                            <div class="tender_img"><img src="media/images/s.jpg" alt=""></div>
-                            <div class="tender_preview">
-                                <p class="tender_author">Николаев Николай</p>
-                                <p class="tender_comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur expedita suscipit earum.</p>
-                            </div>
+                        <div class="contacts">
+                            <h3 class="subtitle">Контакты</h3>
+                            <p class="specialist_telegram">Telegram: фывывфы</p>
+                            <p class="specialist_phone">Телефон: +998974123546</p>
                         </div>
-                        <div class="tender_footer">
-                            <span class="tender_created">Тендер создан: 08.01.2021</span>
-                            <span class="tender_responses">0 предложений</span>
+                        <div class="rating">
+                            <p class="specialist_rating">Рейтинг 5 и звезды еще тут будут</p>
                         </div>
-                        <div class="tender_specialists">
-                            <div class="wrapper">
-                                <h3 class="title">Специалисты, которые откликнулись на этот тендер</h3>
-                                <div class="row">
-                                    <div class="col-12 col-md-6 d-flex align-items-center mb-4">
-                                        <img src="media/images/s.jpg" alt="">
-                                        <p class="specialist">Ведущий <br> <a href="spec_detail.html">Вера Тихая</a></p>
-                                    </div>
-                                    <div class="col-12 col-md-6 d-flex align-items-center mb-4">
-                                        <img src="media/images/s.jpg" alt="">
-                                        <p class="specialist">Ведущий <br> <a href="">Вера Тихая</a></p>
-                                    </div>
-                                    <div class="col-12 col-md-6 d-flex align-items-center mb-4">
-                                        <img src="media/images/s.jpg" alt="">
-                                        <p class="specialist">Ведущий <br> <a href="">Вера Тихая</a></p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 col-lg-9">
+                    <div class="detail_right">
+                        <ul class="nav nav-tabs w-100" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Профиль</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Отзывы</button>
+                            </li>
+                          </ul>
+                          <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <p class="specialist_about">
+                                    Съёмка свадьбы с европейским видением и подходом. Полное режиссирование свадебного дня, помощь в создании поз, моментов, планировании дня. Помощь в поиске и подборе локаций для прогулки, сборов при любой погоде. Создание свадебных фотокниг премиум качества. Цена на свадебную съёмку не привязана ко времени (нет типичной оплаты почасово). Я прекрасно понимаю, что свадебный день - это непредсказуемое торжество, поэтому со мной паре не нужно беспокоиться о том, что нужно доплатить фотографу из-за испортившейся погоды, или длинной пробки, в которую мы попали. Я знаю, сколько труда стоит организовать свадьбу своими силами. Мой опыт, более 8 лет, за которые мне доверились более 250 пар, позволит вам в организации тех моментов свадьбы, которые зависят от фотографа: локация для сборов (дом, квартира или номер в отеле), места для прогулки (платные, бесплатные, условно-платные, дневные, вечерние, интерьерные, лучшие локации для заката солнца и т.д.), ЗАГС или церемония (плюсы, минусы и лучшие места для церемонии), а также любые другие моменты, которые происходят на свадьбе.
+
+                                </p>
+                                <div class="specialist_portfolio">
+                                    <h3 class="subtitle">Портфолио</h3>
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <img src="media/images/w.jpg" alt="" class="w-100">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <img src="media/images/w.jpg" alt="" class="w-100">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <img src="media/images/w.jpg" alt="" class="w-100">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <img src="media/images/w.jpg" alt="" class="w-100">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <img src="media/images/w.jpg" alt="" class="w-100">
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <img src="media/images/w.jpg" alt="" class="w-100">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                Отзывы потом
+                            </div>
+                          </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-
-
 
 
 
