@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    let last_rel = 100;
-    // Calculate();
+    var last_rel = 80;
+    Calculate();
 
     // $('#BudgetI, #BudgetTables .add, #BudgetTables .brd, #BudgetTables .del, #BudgetTables .descr_p').bind(
     // 	"click",
@@ -67,7 +67,7 @@ $(document).ready(function () {
             $('td[rel=' + source_id + ']').html('-');
         else
             $('td[rel=' + source_id + ']').html(sum - paid);
-        // Calculate();
+        Calculate();
     });
 
     //jQuery('input.brd').keyup(function () {
@@ -101,7 +101,7 @@ $(document).ready(function () {
                 dscr_short_ = descr_;
             $("#txt_tmp").parents('td div').html('<p class="descr_p" rel="' + descr_ +
                 '" data="' + source_id_ + '">' + dscr_short_ + '</p>');
-            // Calculate();
+            Calculate();
 
         } else {
             text = $(this).attr("rel");
@@ -148,7 +148,7 @@ $(document).ready(function () {
                     dscr_short = descr;
                 $("#txt_tmp").parents('td div').html('<p class="descr_p" rel="' + descr +
                     '" data="' + source_id + '">' + dscr_short + '</p>');
-                // Calculate();
+                Calculate();
             }
         }
     });
@@ -165,27 +165,27 @@ $(document).ready(function () {
 
     // });
 
-    // $("body").on("change", "input.name", function () {
-    //     source_id_ = $(this).attr("rel");
-    //     sum_ = $('input.sum[rel=' + source_id_ + ']').val();
-    //     paid_ = $('input.paid[rel=' + source_id_ + ']').val();
-    //     name_ = $('input.name[rel=' + source_id_ + ']').val();
-    //     if (sum_ == 0 && paid_ == 0)
-    //         $('td[rel=' + source_id_ + ']').html('-');
-    //     else
-    //         $('td[rel=' + source_id_ + ']').html(sum_ - paid_);
-    //         // Calculate();
-    // });
+    $("body").on("change", "input.name", function () {
+        source_id_ = $(this).attr("rel");
+        sum_ = $('input.sum[rel=' + source_id_ + ']').val();
+        paid_ = $('input.paid[rel=' + source_id_ + ']').val();
+        name_ = $('input.name[rel=' + source_id_ + ']').val();
+        if (sum_ == 0 && paid_ == 0)
+            $('td[rel=' + source_id_ + ']').html('-');
+        else
+            $('td[rel=' + source_id_ + ']').html(sum_ - paid_);
+            Calculate();
+    });
 
-    // $("#BudgetI").change(function () {
-    //     s = $(this).val();
-    //     $.post(baseUrl + 'ajax/UpdateUserBudget', {
-    //         budget: s
-    //     }, function () {
-    //         //$('td[rel='+source_id+']').html(sum-paid);
-    //         // Calculate();
-    //     });
-    // });
+    $("#BudgetI").change(function () {
+        s = $(this).val();
+        $('#BudgetRest').html(s-$('#BudgetSpending').val());
+        Calculate();
+    });
+    $("body").on("keyup", "#BudgetI", function () {
+        this.value = this.value.replace(/[^0-9\.]/g, '');
+        $(this).css('opacity', '1');
+    });
 
     //$("input[type=text]").keyup( function( event )
     // $("body").on("keyup", "input[type=text]", function () {
@@ -230,7 +230,7 @@ $(document).ready(function () {
             //'<td><textarea name="" class="descr" rel="'+last_rel+'"></textarea></td>'+
             '<td class="bgc"><div><p class="descr_p" rel="" data="' + last_rel + '"></p></div></td>' +
             '</tr>')
-        // Calculate();
+        Calculate();
         last_rel++;
         $('input[rel="' + last_rel + '"]:eq(0)').focus();
 
@@ -272,7 +272,7 @@ $(document).ready(function () {
                 $('.DeleteBlock').css('display', 'none');
                 $('body').css('overflow', 'auto');
             }
-            // Calculate();
+            Calculate();
         return false;
     });
 
@@ -284,54 +284,93 @@ $(document).ready(function () {
         return false;
     });
 
+    $('.save').on('click', function (e) {
+        e.preventDefault();
+        SaveJSON();
+        // SaveAll(); ajax post to save im db
+    })
+
 });
 
-// function Calculate() {
-//     t_sum = 0;
-//     t_paid = 0;
+function SaveJSON() {
+    let budget = $('#BudgetI').val();
+    let json = [];
+    $("#BudgetTables table").each(function (index) {
+        let obj = {};
+        let rows = [];
+        obj.rel = $(this).attr('rel');
+        obj.table_name = $(this).find('.table_name').attr('table_name');
+        $("tr", $(this)).each(function (index) {
+            let object = {};
+            if(index != 0){
+                object.name = $(this).find('.row_name').attr('row_name');
+                object.rel = $(this).attr('rel');
+                object.data = $(this).attr('data');
+                object.sum = $(this).find('.sum').length == 1 ? $(this).find('.sum').val() : 0;
+                object.paid = $(this).find('.paid').length == 1 ? $(this).find('.paid').val() : 0;
+                object.diff = $(this).find('.diff').length == 1 ? $(this).find('.diff').text() : '-';
+                object.descr_p = {
+                    'rel': $(this).find('.descr_p').attr('rel'),
+                    'data': $(this).find('.descr_p').attr('data'),
+                    'text': $(this).find('.descr_p').text(),
+                };
+            rows.push(object)    
+            }
+        });
+        obj.rows = rows;
+        json.push(obj);
+    });
+    console.log(json);
+    // console.log(budget);
+    // console.log(last_rel);
+}
 
-//     $("input.brd").each(function (index) {
-//         if ($(this).val() == 0) $(this).css('opacity', '0.6');
-//         else $(this).css('opacity', '1');
-//     });
+function Calculate() {
+    t_sum = 0;
+    t_paid = 0;
 
-//     $("#BudgetTables table").each(function (index) {
-//         sum = 0;
-//         $("input.sum", $(this)).each(function (index) {
-//             sum = sum + parseInt($(this).val());
-//         });
+    $("input.brd").each(function (index) {
+        if ($(this).val() == 0) $(this).css('opacity', '0.6');
+        else $(this).css('opacity', '1');
+    });
 
-//         paid = 0;
-//         $("input.paid", $(this)).each(function (index) {
-//             paid = paid + parseInt($(this).val());
-//         });
+    $("#BudgetTables table").each(function (index) {
+        sum = 0;
+        $("input.sum", $(this)).each(function (index) {
+            sum = sum + parseInt($(this).val());
+        });
 
-//         $(this).find(".block_foot td:eq(1)").text(sum);
-//         $(this).find(".block_foot td:eq(2)").text(paid);
-//         if (sum == 0 && paid == 0)
-//             r = '-';
-//         else
-//             r = sum - paid;
-//         $(this).find(".block_foot td:eq(3)").text(r);
+        paid = 0;
+        $("input.paid", $(this)).each(function (index) {
+            paid = paid + parseInt($(this).val());
+        });
 
-//         t_sum += sum;
-//         t_paid += paid;
-//     });
+        $(this).find(".block_foot td:eq(1)").text(sum);
+        $(this).find(".block_foot td:eq(2)").text(paid);
+        if (sum == 0 && paid == 0)
+            r = '-';
+        else
+            r = sum - paid;
+        $(this).find(".block_foot td:eq(3)").text(r);
 
-//     /*$( "input.sum" ).each(function( index ) {
-//           sum = sum + parseInt($( this ).val());
-//     });*/
+        t_sum += sum;
+        t_paid += paid;
+    });
+
+    /*$( "input.sum" ).each(function( index ) {
+          sum = sum + parseInt($( this ).val());
+    });*/
 
 
-//     /*paid = 0;
-//     $( "input.paid" ).each(function( index ) {
-//           paid = paid + parseInt($( this ).val());
-//     });*/
+    /*paid = 0;
+    $( "input.paid" ).each(function( index ) {
+          paid = paid + parseInt($( this ).val());
+    });*/
 
-//     $('#BudgetSpending').html(t_sum);
-//     $('#BudgetPaid').html(t_paid);
-//     $('#BudgetUnpaid').html(t_sum - t_paid);
-//     budget = parseInt($('#BudgetI').val());
+    $('#BudgetSpending').html(t_sum);
+    $('#BudgetPaid').html(t_paid);
+    $('#BudgetUnpaid').html(t_sum - t_paid);
+    budget = parseInt($('#BudgetI').val());
 
-//     $('#BudgetRest').html(budget - t_sum);
-// }
+    $('#BudgetRest').html(budget - t_sum);
+}

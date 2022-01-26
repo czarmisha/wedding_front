@@ -21,24 +21,25 @@
 		<div id="BudgetH1">
 			<h1>Свадебный бюджет</h1>
 			<a href="javascript:window.print();" id="print">Печать</a>
+			<button class="save">Сохранить</button>
 		</div>
 		<div id="BudgetTables">
 			<table rel="1">
 				<tr rel="1">
-					<th>Образ невесты <span class="add">пункт</span></th>
+					<th class="table_name" table_name="Образ невесты">Образ невесты <span class="add">пункт</span></th>
 					<th>Стоимость</th>
 					<th>Оплачено</th>
 					<th>Остаток</th>
 					<th>Заметки</th>
 				</tr>
 				<tr rel="2" data="1">
-					<td>
+					<td class="row_name" row_name="Свадебное платье">
 						<span class="del" rel="2" title="удалить строку">x</span>
 						Свадебное платье
 					</td>
-					<td><input type="text" min="0" name="" value="0" class="brd sum noborder" rel="2"></td>
+					<td><input type="text" min="0" name="" value="0" class="brd sum noborder s" rel="2"></td>
 					<td><input type="text" min="0" name="" value="0" class="brd paid noborder" rel="2"></td>
-					<td rel="2">-</td>
+					<td class="diff" rel="2">-</td>
 					<td class="bgc">
 						<div>
 							<p class="descr_p" rel="" data="2"></p>
@@ -46,10 +47,10 @@
 					</td>
 				</tr>
 				<tr rel="3" data="1">
-					<td><span class="del" rel="3" title="удалить строку">x</span>Причёска</td>
+					<td  class="row_name" row_name="Причёска"><span class="del" rel="3" title="удалить строку">x</span>Причёска</td>
 					<td><input type="text" min="0" name="" value="0" class="brd sum noborder" rel="3"></td>
 					<td><input type="text" min="0" name="" value="0" class="brd paid noborder" rel="3"></td>
-					<td rel="3">-</td>
+					<td class="diff" rel="3">-</td>
 					<td class="bgc">
 						<div>
 							<p class="descr_p" rel="" data="3"></p>
@@ -143,7 +144,7 @@
 			</table>
 			<table rel="11">
 				<tr rel="11">
-					<th>Образ жениха <span class="add">пункт</span></th>
+					<th class="table_name" table_name="Образ жениха">Образ жениха <span class="add">пункт</span></th>
 					<th>Стоимость</th>
 					<th>Оплачено</th>
 					<th>Остаток</th>
@@ -214,17 +215,17 @@
 			</table>
 			<table rel="16">
 				<tr rel="16">
-					<th>Фотограф <span class="add">пункт</span></th>
+					<th class="table_name" table_name="Фотограф">Фотограф <span class="add">пункт</span></th>
 					<th>Стоимость</th>
 					<th>Оплачено</th>
 					<th>Остаток</th>
 					<th>Заметки</th>
 				</tr>
 				<tr rel="17" data="16">
-					<td><span class="del" rel="17" title="удалить строку">x</span>Съёмка свадьбы</td>
+					<td class="row_name" row_name='Съёмка свадьбы'><span class="del" rel="17" title="удалить строку">x</span>Съёмка свадьбы</td>
 					<td><input type="text" min="0" name="" value="0" class="brd sum noborder" rel="17"></td>
 					<td><input type="text" min="0" name="" value="0" class="brd paid noborder" rel="17"></td>
-					<td rel="17">-</td>
+					<td class="diff" rel="17">-</td>
 					<td class="bgc">
 						<div>
 							<p class="descr_p" rel="" data="17"></p>
@@ -263,7 +264,7 @@
 			</table>
 			<table rel="20">
 				<tr rel="20">
-					<th>Видеограф <span class="add">пункт</span></th>
+					<th class="table_name" table_name="Видеограф">Видеограф <span class="add">пункт</span></th>
 					<th>Стоимость</th>
 					<th>Оплачено</th>
 					<th>Остаток</th>
@@ -301,7 +302,7 @@
 			</table>
 			<table rel="23">
 				<tr rel="23">
-					<th>Ведущий шоу программа <span class="add">пункт</span></th>
+					<th class="table_name" table_name="Ведущий/шоу программа">Ведущий/шоу программа <span class="add">пункт</span></th>
 					<th>Стоимость</th>
 					<th>Оплачено</th>
 					<th>Остаток</th>
@@ -383,7 +384,7 @@
 			</table>
 			<table rel="30">
 				<tr rel="30">
-					<th>Оформитель флорист <span class="add">пункт</span></th>
+					<th class="table_name" table_name="Оформитель флорист">Оформитель флорист <span class="add">пункт</span></th>
 					<th>Стоимость</th>
 					<th>Оплачено</th>
 					<th>Остаток</th>
@@ -465,7 +466,7 @@
 			</table>
 			<table rel="37">
 				<tr rel="37">
-					<th>Кондитер <span class="add">пункт</span></th>
+					<th class="table_name" table_name="Кондитер">Кондитер <span class="add">пункт</span></th>
 					<th>Стоимость</th>
 					<th>Оплачено</th>
 					<th>Остаток</th>
@@ -514,7 +515,7 @@
 			</table>
 			<table rel="41">
 				<tr rel="41">
-					<th>Ресторан <span class="add">пункт</span></th>
+					<th class="table_name" table_name="Ресторан">Ресторан <span class="add">пункт</span></th>
 					<th>Стоимость</th>
 					<th>Оплачено</th>
 					<th>Остаток</th>
@@ -563,7 +564,7 @@
 			</table>
 			<table rel="45">
 				<tr rel="45">
-					<th>Транспорт <span class="add">пункт</span></th>
+					<th class="table_name" table_name="Транспорт">Транспорт <span class="add">пункт</span></th>
 					<th>Стоимость</th>
 					<th>Оплачено</th>
 					<th>Остаток</th>
@@ -601,7 +602,7 @@
 			</table>
 			<table rel="48">
 				<tr rel="48">
-					<th>Свадебные аксессуары <span class="add">пункт</span></th>
+					<th class="table_name" table_name="Свадебные аксессуары">Свадебные аксессуары <span class="add">пункт</span></th>
 					<th>Стоимость</th>
 					<th>Оплачено</th>
 					<th>Остаток</th>
@@ -727,7 +728,7 @@
 			</table>
 			<table rel="59">
 				<tr rel="59">
-					<th>Свадебная полиграфия <span class="add">пункт</span></th>
+					<th class="table_name" table_name="Свадебная полиграфия">Свадебная полиграфия <span class="add">пункт</span></th>
 					<th>Стоимость</th>
 					<th>Оплачено</th>
 					<th>Остаток</th>
@@ -787,7 +788,7 @@
 			</table>
 			<table rel="64">
 				<tr rel="64">
-					<th>Гостиница <span class="add">пункт</span></th>
+					<th class="table_name" table_name="Гостиница">Гостиница <span class="add">пункт</span></th>
 					<th>Стоимость</th>
 					<th>Оплачено</th>
 					<th>Остаток</th>
@@ -825,7 +826,7 @@
 			</table>
 			<table rel="67">
 				<tr rel="67">
-					<th>Другие расходы <span class="add">пункт</span></th>
+					<th class="table_name" table_name="Другие расходы">Другие расходы <span class="add">пункт</span></th>
 					<th>Стоимость</th>
 					<th>Оплачено</th>
 					<th>Остаток</th>
